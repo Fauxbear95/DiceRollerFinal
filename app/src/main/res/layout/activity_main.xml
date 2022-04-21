@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/result"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textAlignment="center" />
+
+
+        <TextView
+            android:id="@+id/rollDisplay"
+            android:textSize="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <Spinner
+            android:id="@+id/Spinner"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_width="140dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_marginStart="20dp"
+                android:text="@string/rollNumber"
+                android:layout_height="40dp"
+                android:textAlignment="center" />
+
+
+            <EditText
+                android:id="@+id/numberOfRolls"
+                android:layout_weight="1"
+                android:text="@string/_1"
+                android:background="#f7f7f7"
+                android:inputType="number"
+                android:layout_marginEnd="30dp"
+                android:layout_width="0dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Roll"
+            android:text="@string/roll"
+            android:layout_gravity="center"
+            android:layout_width="100dp"
+            android:layout_height="50dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_weight="1"
+            android:id="@+id/customDiceEditText"
+            android:inputType="number"
+            android:hint="@string/Custom_Dice"
+            android:layout_margin="30dp"
+            android:background="#f7f7f7"
+            android:layout_width="0dp"
+            android:layout_height="30dp"/>
+
+        <Button
+            android:text="@string/add"
+            android:id="@+id/Add"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp"
+            android:layout_width="100dp"
+            android:layout_height="50dp"/>
+    </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/history"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textAlignment="center" />
+
+        <ListView
+            android:id="@+id/historyListView"
+            android:layout_width="match_parent"
+            android:layout_height="130dp" />
+
+        <Button
+            android:id="@+id/historyClear"
+            android:layout_height="60dp"
+            android:layout_width="100dp"
+            android:text="Clear History"
+            android:layout_marginBottom="50dp"
+            android:layout_gravity="center">
+
+
+        </Button>
+
+
+        <!--<TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#03396c"
+            android:text="@string/roll_history"
+            android:textColor="@color/white" />
+
+        <ListView
+            android:id="@+id/list_view"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_gravity="bottom" />
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:columnCount="3"
+            android:rowCount="9">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="#03396c"
+                android:text="@string/dice_options"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="#03396c"
+                android:text="@string/number"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="#03396c"
+                android:text="@string/included_in_roll"
+                android:textAlignment="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="@string/d4"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Spinner
+                android:id="@+id/D4Spinner"
+                android:layout_columnWeight=".2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="2"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="#005b96"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="@string/d6"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Spinner
+                android:id="@+id/D6Spinner"
+                android:layout_columnWeight=".2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="@string/d8"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Spinner
+                android:id="@+id/D8Spinner"
+                android:layout_columnWeight=".2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="@string/d10"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Spinner
+                android:id="@+id/D10Spinner"
+                android:layout_columnWeight=".2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="@string/d12"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Spinner
+                android:id="@+id/D12Spinner"
+                android:layout_columnWeight=".2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="@string/d20"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Spinner
+                android:id="@+id/D20Spinner"
+                android:layout_columnWeight=".2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96"
+                android:text="@string/d100"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+            <Spinner
+                android:id="@+id/D100Spinner"
+                android:layout_columnWeight=".2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="3.5"
+                android:background="#005b96"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="2"
+                android:background="#005b96">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="#005b96"
+                    android:text="@string/d"
+                    android:textColor="@color/white"
+                    android:textSize="40sp" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="4"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/customSpinner"
+                android:layout_columnWeight=".2" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="3.5"
+                android:background="#005b96"
+                android:text="Result"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
+
+        </GridLayout>-->
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
